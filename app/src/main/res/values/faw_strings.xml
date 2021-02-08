@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="faw_user" translatable="false">&#xf007;</string>
+    <string name="faw_list" translatable="false">&#xf00b;</string>
+    <string name="faw_users_cog" translatable="false">&#xf509;</string>
+    <string name="faw_pencil" translatable="false">&#xf303;</string>
+    <string name="faw_trash" translatable="false">&#xf1f8;</string>
+    <string name="faw_pdf" translatable="false">&#xf1c1;</string>
+    <string name="faw_video" translatable="false">&#xf03d;</string>
+    <string name="faw_link" translatable="false">&#xf0c1;</string>
+    <string name="faw_filter" translatable="false">&#xf160;</string>
+    <string name="faw_camera" translatable="false">&#xf030;</string>
+    <string name="faw_images" translatable="false">&#xf302;</string>
+    <string name="faw_thumbs_up" translatable="false">&#xf164;</string>
+    <string name="faw_ban" translatable="false">&#xf05e;</string>
+    <string name="faw_heart" translatable="false">&#xf004;</string>
+    <string name="faw_search" translatable="false">&#xf002;</string>
+    <string name="faw_question" translatable="false">&#xf128;</string>
+    <string name="faw_times" translatable="false">&#xf00d;</string>
+
+
+    <string name="faw_chart_pie" translatable="false">&#xf200;</string>
+    <string name="faw_search_plus" translatable="false">&#xf00e;</string>
+    <string name="faw_bug" translatable="false">&#xf188;</string>
+    <string name="faw_wallet" translatable="false">&#xf555;</string>
+    <string name="faw_arrow_circle_up" translatable="false">&#xf0aa;</string>
+    <string name="faw_cart" translatable="false">&#xf07a;</string>
+    <string name="faw_ethernet" translatable="false">&#xf796;</string>
+    <string name="faw_user_tie" translatable="false">&#xf508;</string>
+    <string name="faw_mitten" translatable="false">&#xf7b5;</string>
+    <string name="faw_user_spy" translatable="false">&#xf21b;</string>
+    <string name="faw_eye" translatable="false">&#xf06e;</string>
+
+
+</resources>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dimfcompany.aknewsclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.aknewsclient.R" />
+    </data>
+
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/la_drawer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/la_fake_status"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:background="@color/red" />
+
+            <RelativeLayout
+                android:id="@+id/lar_top"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_below="@id/la_fake_status"
+                android:background="@color/red">
+
+                <TextView
+                    android:id="@+id/tv_profile"
+                    style="@style/TvFawReg.L"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:background="@{BuilderBg.getSimpleDrawableRipple(0f,BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.white_trans_50))}"
+                    android:text="@string/faw_user"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/tv_filter"
+                    android:layout_toRightOf="@id/tv_profile"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        style="@style/TvBold.Xxl"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:textColor="@color/white"
+                        tools:text="Новости CSL" />
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        style="@style/TvReg.M"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="12dp"
+                        android:paddingRight="12dp"
+                        android:textColor="@color/white"
+                        tools:text="22 января 2020" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_filter"
+                    style="@style/TvFawReg.L"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:background="@{BuilderBg.getSimpleDrawableRipple(0f,BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.white_trans_50))}"
+                    android:text="@string/faw_filter"
+                    android:textColor="@color/white" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/img_squares_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_red_squares" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginRight="22dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/img_red_squares" />
+
+            <include
+                android:id="@+id/cv_avatar"
+                layout="@layout/cv_circle_image"
+                android:layout_width="94dp"
+                android:layout_height="94dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="102dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tv_name"
+                style="@style/TvReg.M"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cv_avatar"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="16dp"
+                android:text="Пупкин Василий Андреевич"
+                android:textColor="@color/gray6" />
+
+            <TextView
+                android:id="@+id/tv_logout"
+                style="@style/TvReg.L"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_name"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="16dp"
+                android:background="@{BuilderBg.getSimpleEmptyRipple(4f,BuilderBg.gc(R.color.red),1f)}"
+                android:padding="8dp"
+                android:text="@string/exit"
+                android:textColor="@color/red" />
+
+
+            <TextView
+                android:id="@+id/tv_privacy"
+                style="@style/TvReg.L"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="48dp"
+                android:background="@{BuilderBg.getSimpleDrawableRipple(0f,BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.red_trans_50))}"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:text="@string/privacy_policy"
+                android:textColor="@color/red" />
+
+        </RelativeLayout>
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</layout>
