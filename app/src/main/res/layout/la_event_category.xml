@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_category_icon"
+        style="@style/TvFawSolid.L"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:textColor="@color/blue_yum"
+        tools:text="@string/faw_users_cog" />
+
+    <TextView
+        android:layout_marginTop="3dp"
+        android:id="@+id/tv_category_name"
+        style="@style/TvBold.M"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@id/tv_category_icon"
+        android:textColor="@color/blue_yum"
+        tools:text="OPS" />
+
+    <TextView
+        style="@style/TvSemiItalic.M"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_category_icon"
+        android:gravity="left"
+        android:textColor="@color/gray7"
+        tools:text="Новые сроки подачи заявления, Ускорен процесс увольнения, Обновление документации" />
+
+</RelativeLayout>

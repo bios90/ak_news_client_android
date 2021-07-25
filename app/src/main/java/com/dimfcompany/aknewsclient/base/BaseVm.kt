@@ -15,6 +15,8 @@ import com.dimfcompany.aknewsclient.logic.utils.images.ImageCameraManager
 import com.dimfcompany.aknewsclient.networking.BaseNetworker
 import com.dimfcompany.aknewsclient.networking.apis.ApiAuth
 import com.dimfcompany.aknewsclient.networking.apis.ApiGlobal
+import com.dimfcompany.aknewsclient.networking.apis.ApiNews
+import com.dimfcompany.aknewsclient.ui.act_event_show.ActEventShow
 import com.justordercompany.barista.logic.utils.BuilderPermRequest
 import com.justordercompany.barista.logic.utils.PermissionManager
 import io.reactivex.disposables.CompositeDisposable
@@ -28,10 +30,10 @@ open class BaseVm : ViewModel()
 
     @Inject
     lateinit var api_global: ApiGlobal
-//
-//    @Inject
-//    lateinit var api_news: ApiNews
-//
+
+    @Inject
+    lateinit var api_news: ApiNews
+
     @Inject
     lateinit var base_networker: BaseNetworker
 
@@ -120,6 +122,14 @@ open class BaseVm : ViewModel()
                 .setTitle(getStringMy(R.string.privacy_policy))
                 .setText(getStringMy(R.string.privacy_policy_text))
                 .setBtnOk(BtnAction(getStringMy(R.string.its_clear), {}))
+                .sendInVm(this)
+    }
+
+    fun toEventShow(event_id:Long)
+    {
+        BuilderIntent()
+                .setActivityToStart(ActEventShow::class.java)
+                .addParam(Constants.Extras.EVENT_ID, event_id)
                 .sendInVm(this)
     }
 }

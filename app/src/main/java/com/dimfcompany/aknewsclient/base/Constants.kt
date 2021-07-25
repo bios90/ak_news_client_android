@@ -52,5 +52,6 @@ class Constants
         const val NEWS_ID = "news_id"
         const val EVENT_ID = "event_id"
         const val FILTER_DATA = "filter_data"
+        const val MY_PUSH = "my_push"
     }
 }

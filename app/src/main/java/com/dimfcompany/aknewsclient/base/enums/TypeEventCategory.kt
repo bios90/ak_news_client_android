@@ -1,8 +1,10 @@
 package com.dimfcompany.aknewsclient.base.enums
 
+import android.graphics.drawable.Drawable
 import com.dimfcompany.aknewsclient.R
 import com.dimfcompany.aknewsclient.base.extensions.getColorMy
 import com.dimfcompany.aknewsclient.base.extensions.getStringMy
+import com.dimfcompany.aknewsclient.logic.utils.builders.BuilderBg
 import com.google.gson.annotations.SerializedName
 
 enum class TypeEventCategory
@@ -44,12 +46,18 @@ enum class TypeEventCategory
         }
     }
 
-    fun getColor():Int
+    fun getColor(): Int
     {
         return when (this)
         {
             AK -> getColorMy(R.color.red_ak)
             CSL -> getColorMy(R.color.blue_yum)
         }
+    }
+
+    fun getBubbleBg(): Drawable
+    {
+        val color = getColor()
+        return BuilderBg.getSimpleDrawable(999f, color)
     }
 }

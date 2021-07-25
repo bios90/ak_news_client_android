@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "548359748802",
+    "project_id": "aknews-5b380",
+    "storage_bucket": "aknews-5b380.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548359748802:android:a232e6d93122f77b44cf5b",
+        "android_client_info": {
+          "package_name": "com.dimfcompany.aknewsadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548359748802-72quaqep1or4kojpp6g49tg1dlciqga3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADtYwWAfyRhVgzDKJ0Pmmi9CALGtoVMes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548359748802-72quaqep1or4kojpp6g49tg1dlciqga3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548359748802:android:7e3d35b34a3ce01044cf5b",
+        "android_client_info": {
+          "package_name": "com.dimfcompany.aknewsclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "548359748802-72quaqep1or4kojpp6g49tg1dlciqga3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADtYwWAfyRhVgzDKJ0Pmmi9CALGtoVMes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "548359748802-72quaqep1or4kojpp6g49tg1dlciqga3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

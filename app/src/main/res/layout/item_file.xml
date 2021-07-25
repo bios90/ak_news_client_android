@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <data>
+
+        <import type="com.dimfcompany.aknewsclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.aknewsclient.R" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipChildren="false"
+        android:clipToPadding="false">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_toLeftOf="@id/tv_remove"
+            android:clipToPadding="false"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="12dp">
+
+            <RelativeLayout
+                android:id="@+id/lar_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@{BuilderBg.getSimpleDrawableRipple(4f,BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.red_trans_50))}">
+
+                <TextView
+                    android:id="@+id/tv_file_name"
+                    style="@style/TvReg.M"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:layout_toLeftOf="@id/tv_file_size"
+                    android:ellipsize="end"
+                    android:gravity="left"
+                    android:lines="1"
+                    android:textColor="@color/gray7"
+                    tools:text="Veseleie rebyata 3d" />
+
+                <TextView
+                    android:id="@+id/tv_file_size"
+                    style="@style/TvReg.M"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="12dp"
+                    android:textColor="@color/gray5"
+                    tools:text="12 mb" />
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tv_remove"
+            style="@style/TvFawSolid.M"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@{BuilderBg.getSimpleDrawableRipple(4f,BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.red_trans_50))}"
+            android:text="@string/faw_times"
+            android:textColor="@color/red" />
+
+    </RelativeLayout>
+
+</layout>

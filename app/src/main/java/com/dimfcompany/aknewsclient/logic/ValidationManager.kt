@@ -143,8 +143,5 @@ class ValidationManager
             data.validateEmail(email)
             return data
         }
-
-
-
     }
 }

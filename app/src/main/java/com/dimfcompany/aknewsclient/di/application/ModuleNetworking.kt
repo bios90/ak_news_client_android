@@ -4,6 +4,7 @@ import com.dimfcompany.aknewsclient.base.AppClass
 import com.dimfcompany.aknewsclient.base.Constants
 import com.dimfcompany.aknewsclient.networking.apis.ApiAuth
 import com.dimfcompany.aknewsclient.networking.apis.ApiGlobal
+import com.dimfcompany.aknewsclient.networking.apis.ApiNews
 import com.grapesnberries.curllogger.CurlLoggerInterceptor
 import dagger.Module
 import dagger.Provides
@@ -77,6 +78,13 @@ class ModuleNetworking
     fun provideApiGlobal(retrofit: Retrofit): ApiGlobal
     {
         return retrofit.create(ApiGlobal::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideApiNews(retrofit: Retrofit): ApiNews
+    {
+        return retrofit.create(ApiNews::class.java)
     }
 
 }

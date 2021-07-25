@@ -1,5 +1,6 @@
 package com.rucode.autopass.logic.utils.images
 
+import android.graphics.Bitmap
 import android.graphics.Paint
 import android.graphics.drawable.Drawable
 import android.util.Log
@@ -12,13 +13,17 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.target.Target
+import com.bumptech.glide.request.transition.Transition
 import com.dimfcompany.aknewsclient.R
 import com.dimfcompany.aknewsclient.base.AppClass
 import com.dimfcompany.aknewsclient.base.extensions.dp2pxInt
 import com.dimfcompany.aknewsclient.base.extensions.getColorMy
 import com.dimfcompany.aknewsclient.base.extensions.isNetworkAvailable
 import com.github.ybq.android.spinkit.SpinKitView
+import kotlin.coroutines.resume
+import kotlin.coroutines.suspendCoroutine
 
 class GlideManager
 {
@@ -40,7 +45,7 @@ class GlideManager
             var builder = Glide.with(imageView)
                     .load(url)
                     .fitCenter()
-                    .diskCacheStrategy(DiskCacheStrategy.DATA)
+                    .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
                     .placeholder(getProgressDrawable())
 
 
@@ -76,6 +81,33 @@ class GlideManager
             }
 
             builder.into(imageView)
+        }
+
+        suspend fun getImageAsBitmap(url: String): Bitmap?
+        {
+            return suspendCoroutine(
+                {
+                    Glide.with(AppClass.app)
+                            .asBitmap()
+                            .load(url)
+                            .into(object : CustomTarget<Bitmap>()
+                            {
+                                override fun onResourceReady(resource: Bitmap, transition: Transition<in Bitmap>?)
+                                {
+                                    it.resume(resource)
+                                }
+
+                                override fun onLoadCleared(placeholder: Drawable?)
+                                {
+                                }
+
+                                override fun onLoadFailed(errorDrawable: Drawable?)
+                                {
+                                    super.onLoadFailed(errorDrawable)
+                                    it.resume(null)
+                                }
+                            })
+                })
         }
     }
 }

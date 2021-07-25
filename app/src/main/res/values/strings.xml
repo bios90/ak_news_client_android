@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AkNewsClient</string>
+    <string name="app_name">AK News</string>
     <string name="loading">Загрузка</string>
     <string name="password">Пароль</string>
     <string name="enter">Войти</string>
@@ -69,4 +69,7 @@
     <string name="exit_without_save">Выйти из редактирования без сохранения?</string>
     <string name="make_exit">Выйти</string>
     <string name="exit_current_account">Выйти из текущего акаунта?</string>
+    <string name="all_news">Все новости</string>
+    <string name="any_dates">Любые даты</string>
+    <string name="notify_chanel_aknews">Уведомления о событиях в приложении</string>
 </resources>

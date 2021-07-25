@@ -9,7 +9,7 @@ import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.android.AndroidInjector
 import dagger.android.DaggerApplication
-
+//Todo remove forgot pass button
 class AppClass: DaggerApplication()
 {
     companion object

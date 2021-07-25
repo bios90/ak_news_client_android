@@ -3,7 +3,7 @@
     <style name="Theme.AkNewsClient" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:ambientShadowAlpha">0.07</item>
         <item name="android:spotShadowAlpha">0.07</item>
-        <item name="android:windowBackground">@drawable/img_splash_new</item>
+        <item name="android:windowBackground">@drawable/drw_splash_bg</item>
     </style>
 
     <style name="Theme.Transparent" parent="Theme.AppCompat.Light.NoActionBar">

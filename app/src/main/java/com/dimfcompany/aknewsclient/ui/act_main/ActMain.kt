@@ -6,8 +6,10 @@ import androidx.cardview.widget.CardView
 import androidx.core.view.GravityCompat
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.dimfcompany.aknewsclient.R
 import com.dimfcompany.aknewsclient.base.BaseActivity
+import com.dimfcompany.aknewsclient.base.adapters.AdapterRvEvents
 import com.dimfcompany.aknewsclient.base.data_binding.makeRoundMy
 import com.dimfcompany.aknewsclient.base.extensions.*
 import com.dimfcompany.aknewsclient.databinding.ActMainBinding
@@ -19,6 +21,7 @@ class ActMain : BaseActivity()
 {
     lateinit var vm_act_main: VmActMain
     lateinit var bnd_act_main: ActMainBinding
+    val adapter = AdapterRvEvents()
 
     override fun onCreate(savedInstanceState: Bundle?)
     {
@@ -30,6 +33,7 @@ class ActMain : BaseActivity()
 
         setEvents()
         setListeners()
+        setRecycler()
 
         runActionWithDelay(lifecycleScope,100,
             {
@@ -52,6 +56,11 @@ class ActMain : BaseActivity()
         bnd_act_main.tvProfile.setOnClickListener(
             {
                 bnd_act_main.laDrawer.openDrawer(GravityCompat.START)
+            })
+
+        bnd_act_main.tvFilter.setOnClickListener(
+            {
+                vm_act_main.ViewListener().clickedFilter()
             })
 
         bnd_act_main.tvPrivacy.setOnClickListener(
@@ -81,6 +90,23 @@ class ActMain : BaseActivity()
                         GlideManager.loadImage(bnd_act_main.cvAvatar.imgImg, url)
                     })
                 .disposeBy(composite_disposable)
+
+        vm_act_main.bs_filter_data
+                .mainThreaded()
+                .subscribe(
+                    {
+                        bnd_act_main.tvType.text = it.category?.getNameForDisplay() ?: getStringMy(R.string.all_news)
+                        bnd_act_main.tvDate.text = it.getDateText()
+                    })
+                .disposeBy(composite_disposable)
+
+        vm_act_main.bs_events
+                .mainThreaded()
+                .subscribe(
+                    {
+                        adapter.setItems(it)
+                    })
+                .disposeBy(composite_disposable)
     }
 
     override fun onBackPressed()
@@ -91,6 +117,14 @@ class ActMain : BaseActivity()
             return
         }
         super.onBackPressed()
+    }
+
+    private fun setRecycler()
+    {
+        adapter.listener = vm_act_main.ViewListener()
+        bnd_act_main.recEvents.adapter = adapter
+        bnd_act_main.recEvents.layoutManager = LinearLayoutManager(this)
+        bnd_act_main.recEvents.setDivider(getColorMy(R.color.transparent), dp2pxInt(8f))
     }
 
 }

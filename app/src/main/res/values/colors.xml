@@ -32,7 +32,8 @@
     <color name="green_light">#43CEA2</color>
 
     <color name="yellow">#F5A623</color>
-
     <color name="blue_yum">#0298D3</color>
     <color name="red_ak">#F75B4D</color>
+
+    <color name="orange">#ff7518</color>
 </resources>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.dimfcompany.aknewsclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.aknewsclient.R" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray8_trans_50"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginBottom="52dp"
+            android:background="@{BuilderBg.getSimpleDrawable(12f,BuilderBg.gc(R.color.white))}">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/TvReg.Xl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:text="@string/search_and_filter"
+                android:textColor="@color/red" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/tv_apply"
+                android:layout_below="@id/tv_title">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/TvReg.L"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="@string/search"
+                        android:textColor="@color/gray5" />
+
+                    <com.dimfcompany.aknewsclient.ui.custom_views.MyEtWithObserv
+                        android:id="@+id/et_search"
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@{BuilderBg.getStrokedEt()}"
+                        android:gravity="left" />
+
+                    <TextView
+                        style="@style/TvReg.L"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="@string/rb_sort"
+                        android:textColor="@color/gray5" />
+
+                    <RadioGroup
+                        android:id="@+id/rg_sort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="22dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="22dp"
+                        android:checkedButton="@id/rb_category"
+                        android:orientation="vertical">
+
+                        <RadioButton
+                            android:id="@+id/rb_sort_name"
+                            style="@style/Radio.Red"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="@string/by_name" />
+
+                        <RadioButton
+                            android:id="@+id/rb_category"
+                            style="@style/Radio.Red"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="@string/by_category" />
+
+                        <RadioButton
+                            android:id="@+id/rb_author"
+                            style="@style/Radio.Red"
+                            android:layout_width="match_parent"
+                            android:layout_height="32dp"
+                            android:text="@string/by_author" />
+
+                    </RadioGroup>
+
+
+                    <TextView
+                        style="@style/TvReg.L"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginRight="12dp"
+                        android:text="@string/categories"
+                        android:textColor="@color/gray5" />
+
+                    <LinearLayout
+                        android:id="@+id/lal_for_checkboxes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="22dp"
+                        android:paddingRight="22dp">
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <TextView
+                android:id="@+id/tv_apply"
+                style="@style/TvReg.L"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="12dp"
+                android:background="@{BuilderBg.getSimpleDrawableRipple(4f,BuilderBg.gc(R.color.red),BuilderBg.gc(R.color.red_dark))}"
+                android:text="@string/apply"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>

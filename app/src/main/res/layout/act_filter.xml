@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.dimfcompany.aknewsclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.aknewsclient.R" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray8_trans_50"
+        android:fitsSystemWindows="false"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_margin="22dp"
+            android:background="@{BuilderBg.getSimpleDrawable(12f,BuilderBg.gc(R.color.white))}"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/TvReg.Xl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:text="@string/search_and_filter"
+                android:textColor="@color/red" />
+
+            <TextView
+                style="@style/TvReg.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp"
+                android:text="@string/search"
+                android:textColor="@color/gray5" />
+
+            <com.dimfcompany.aknewsclient.ui.custom_views.MyEtWithObserv
+                android:id="@+id/et_search"
+                style="@style/EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="12dp"
+                android:background="@{BuilderBg.getStrokedEt()}"
+                android:gravity="left" />
+
+            <TextView
+                style="@style/TvReg.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/category"
+                android:textColor="@color/gray5" />
+
+            <RadioGroup
+                android:id="@+id/rg_event_category"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="12dp"
+                android:checkedButton="@id/radio0"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/radio0"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="-1dp"
+                    android:layout_weight="10"
+                    android:background="@{BuilderBg.getRadioDrawable(BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.red_ak),BuilderBg.gc(R.color.gray4),4f,0f,0f,4f)}"
+                    android:elevation="10dp"
+                    android:outlineProvider="none"
+                    android:text="@string/news_ak"
+                    android:textColor="@{BuilderBg.getRbTextColor(BuilderBg.gc(R.color.white),BuilderBg.gc(R.color.gray5))}" />
+
+
+                <RadioButton
+                    android:id="@+id/radio1"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="10"
+                    android:background="@{BuilderBg.getRadioDrawable(BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.green),BuilderBg.gc(R.color.gray4),0f,0f,0f,0f)}"
+                    android:outlineProvider="none"
+                    android:text="@string/all"
+                    android:textColor="@{BuilderBg.getRbTextColor(BuilderBg.gc(R.color.white),BuilderBg.gc(R.color.gray5))}" />
+
+                <RadioButton
+                    android:id="@+id/radio2"
+                    style="@style/RadioButton"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="-1dp"
+                    android:layout_weight="10"
+                    android:background="@{BuilderBg.getRadioDrawable(BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.blue_yum),BuilderBg.gc(R.color.gray4),0f,4f,4f,0f)}"
+                    android:elevation="10dp"
+                    android:outlineProvider="none"
+                    android:text="@string/news_csl"
+                    android:textColor="@{BuilderBg.getRbTextColor(BuilderBg.gc(R.color.white),BuilderBg.gc(R.color.gray5))}" />
+
+            </RadioGroup>
+
+            <TextView
+                style="@style/TvReg.L"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="10dp"
+                android:text="Даты"
+                android:textColor="@color/gray5" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="12dp">
+
+                <TextView
+                    android:id="@+id/tv_clear_dates"
+                    style="@style/TvFawSolid.M"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_centerInParent="true"
+                    android:background="@{BuilderBg.getSimpleDrawableRipple(0f,BuilderBg.gc(R.color.transparent),BuilderBg.gc(R.color.red_trans_50))}"
+                    android:text="@string/faw_times"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:id="@+id/tv_date_from"
+                    style="@style/TvReg.M"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_toLeftOf="@id/tv_clear_dates"
+                    android:background="@{BuilderBg.getStrokedEt()}" />
+
+                <TextView
+                    android:id="@+id/tv_date_to"
+                    style="@style/TvReg.M"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    android:layout_toRightOf="@id/tv_clear_dates"
+                    android:background="@{BuilderBg.getStrokedEt()}" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tv_apply"
+                style="@style/TvReg.L"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_margin="12dp"
+                android:background="@{BuilderBg.getSimpleDrawableRipple(4f,BuilderBg.gc(R.color.red),BuilderBg.gc(R.color.red_dark))}"
+                android:text="@string/apply"
+                android:textColor="@color/white" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>

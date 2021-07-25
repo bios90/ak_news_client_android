@@ -18,6 +18,7 @@ import android.view.inputmethod.InputMethodManager
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.ColorUtils
 import com.dimfcompany.aknewsclient.base.AppClass
+import com.google.firebase.messaging.RemoteMessage
 import kotlinx.coroutines.*
 import okhttp3.ResponseBody
 import retrofit2.Response
@@ -115,8 +116,6 @@ fun Int.darken(ratio: Float = 0.2f): Int
 {
     return ColorUtils.blendARGB(this, Color.BLACK, ratio)
 }
-
-
 
 fun Intent.myPutExtra(name: String, obj: Any?)
 {
@@ -278,6 +277,11 @@ fun Intent.applyShareFlags()
     this.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
 }
 
+fun Intent.makeClearAllPrevious()
+{
+    this.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+}
+
 fun openAnyFile(uri: Uri)
 {
     try
@@ -340,7 +344,6 @@ fun Response<ResponseBody>?.getBodyAsStr(): String?
 
 fun <T> String?.toObjOrNullGson(obj_class: Class<T>): T?
 {
-    Log.e("Parse_Trying", "Will parse to ${obj_class.name} string \n\n\n$this\n\n\n")
     val gson = AppClass.gson
     try
     {
@@ -394,4 +397,53 @@ fun View.setWidth(widthToSet: Int)
 {
     this.layoutParams.width = widthToSet
     this.requestLayout()
+}
+
+fun emailIntent(whom: String?, text: String?, subj: String?)
+{
+    val intent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+        "mailto", whom, null))
+    intent.putExtra(Intent.EXTRA_SUBJECT, subj)
+    intent.putExtra(Intent.EXTRA_TEXT, text);
+
+    val chooser = Intent.createChooser(intent, "Отправить email")
+    chooser.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+    try
+    {
+        AppClass.app.startActivity(chooser)
+    }
+    catch (e: java.lang.Exception)
+    {
+        e.printStackTrace()
+    }
+}
+
+fun <T> HashSet<T>.addOrRemove(item: T)
+{
+    if (this.contains(item))
+    {
+        this.remove(item)
+    }
+    else
+    {
+        this.add(item)
+    }
+}
+
+fun RemoteMessage.getInt(key:String):Int?
+{
+    val data = this.getData() as Map<String, String>
+    return data.get(key)?.toIntOrNull()
+}
+
+fun RemoteMessage.getLong(key:String):Long?
+{
+    val data = this.getData() as Map<String, String>
+    return data.get(key)?.toLongOrNull()
+}
+
+fun RemoteMessage.getString(key:String):String?
+{
+    val data = this.getData() as Map<String, String>
+    return data.get(key)
 }

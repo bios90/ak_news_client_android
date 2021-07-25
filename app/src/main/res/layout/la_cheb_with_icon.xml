@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_icon"
+            style="@style/TvFawReg.Xl"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_centerVertical="true"
+            android:text="@string/faw_user_spy"
+            android:textColor="@color/blue_yum" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/cheb"
+            style="@style/MyCheckBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_toRightOf="@id/tv_icon"
+            android:text="@string/all" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,157 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.dimfcompany.aknewsclient.logic.utils.builders.BuilderBg" />
+
+        <import type="com.dimfcompany.aknewsclient.R" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@{BuilderBg.getSimpleDrawableRipple(8f,BuilderBg.gc(R.color.white),BuilderBg.gc(R.color.red_trans_50))}"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="12dp"
+        app:cardPreventCornerOverlap="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="12dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginRight="12dp">
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    style="@style/TvBold.L"
+                    android:textSize="30dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/red"
+                    tools:text="7 дек 2020" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/tv_type"
+                        style="@style/TvBold.M"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:paddingLeft="12dp"
+                        android:paddingTop="4dp"
+                        android:paddingRight="12dp"
+                        android:paddingBottom="4dp"
+                        android:textColor="@color/white"
+                        tools:text="Новости АК" />
+
+                    <TextView
+                        android:id="@+id/tv_news_count"
+                        style="@style/TvReg.S"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_type"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="2dp"
+                        android:textColor="@color/gray6"
+                        tools:text="Новостей: 5" />
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_carousel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingLeft="12dp"
+                android:paddingRight="6dp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/la_for_categs"
+                my_divider_color="@{R.color.transparent}"
+                my_divider_size="@{5f}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp"
+                android:showDividers="middle">
+
+                <include
+                    android:id="@+id/la_ops"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_hr"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_qa"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_financial_economical"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_development"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_marketing"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_it"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_administration"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_using"
+                    layout="@layout/la_event_category" />
+
+                <include
+                    android:id="@+id/la_gen_director"
+                    layout="@layout/la_event_category" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
